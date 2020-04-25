@@ -1,6 +1,6 @@
 <template>
   <div id="home-box">
-    <calendar  ref="calendar" @changeMonth="changeMonthHandle" @choseDay="choseDay" 
+    <calendar  ref="calendar" @changeMonth="changeMonthHandle" @choseDay="choseDay"
     :markDate="mark"></calendar>
 
     <div class="infoBox">
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     changeMonthHandle(data){
-      this.mark[0] = data
+      this.mark = [this.$storage.formateTime(data)]
       this.initData()
     },
     choseDay(time){
@@ -60,9 +60,10 @@ export default {
     let time = this.$route.params.time
     if(time){
       this.mark = [decodeURIComponent(time)]
+      this.changeMonthHandle(time)
+    }else {
+      this.initData()
     }
-    this.initData()
-
   }
 }
 </script>

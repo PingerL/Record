@@ -4,6 +4,8 @@ function setInfo(time,title ="",content=""){
   let DATA = JSON.parse(localStorage.getItem(FLAG) || "{}"),
   //Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组
       DATA_KEYS = Object.keys(DATA) 
+      console.log(DATA,'data')
+      console.log(DATA_KEYS,'key')
   if(!DATA_KEYS.includes(time)){
     DATA[time] = []
   }

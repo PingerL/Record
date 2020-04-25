@@ -42,7 +42,8 @@ export default {
       },
       isShow: false,
       msg: "",
-      id:this.$route.query.id
+      id:this.$route.query.id,
+      time:this.$storage.formateTime(this.$route.query.time)
     };
   },
   methods: {
@@ -62,7 +63,7 @@ export default {
         return;
       }
       this.$storage.setInfo(
-        this.$route.query.time,
+        this.time,
         this.info.title,
         this.info.detail
       );
@@ -72,17 +73,17 @@ export default {
     },
     getHandle(){
       if(!this.$route.query.id) return
-      let data = this.$storage.getInfo(this.$route.query.time,this.$route.query.id)
+      let data = this.$storage.getInfo(this.time,this.$route.query.id)
       this.info.title = data.title
       this.info.detail = data.content
     },
     delHandle(){
-      this.$storage.delInfo(this.$route.query.time,this.id)
+      this.$storage.delInfo(this.time,this.id)
       this.backHandle()
     }
   },
   created() {
-    console.log(this.$route.query);
+    console.log(this.$route.query,'time');
     this.getHandle()
   }
 };
