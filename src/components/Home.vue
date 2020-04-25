@@ -1,5 +1,5 @@
 <template>
-  <div class="home-box">
+  <div id="home-box">
     <calendar  ref="calendar" @changeMonth="changeMonthHandle" @choseDay="choseDay"
     :markDate="mark"></calendar>
 
@@ -21,7 +21,7 @@
       </ul>
      
     </div>
-    <router-link :to="{path:'/handle',query:{time:mark[0]}}" class="addBtn" tag="div">+</router-link>
+    <router-link :to="{path:'/handle',query:{time:mark[0]}}" class="addBtn" tag="div">加</router-link>
   </div>
 </template>
 
@@ -66,11 +66,11 @@ export default {
 </script>
 
 <style>
-.home-box {
+#home-box {
   height: 100%;
   position: relative;
 }
-  .home-box .wh_content_item .wh_isToday {
+  #home-box .wh_content_item .wh_isToday {
     background: rgb(240, 89, 44) ;
   }
   .info {
@@ -94,8 +94,8 @@ export default {
   .addBtn {
     width: 40px;
     height: 40px;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 40px;
     text-align: center;
     position: absolute;
     right: 10px;
