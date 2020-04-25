@@ -1,6 +1,6 @@
 <template>
   <div id="home-box">
-    <calendar  ref="calendar" @changeMonth="changeMonthHandle" @choseDay="choseDay"
+    <calendar  ref="calendar" @changeMonth="changeMonthHandle" @choseDay="choseDay" 
     :markDate="mark"></calendar>
 
     <div class="infoBox">
@@ -40,13 +40,15 @@ export default {
     }
   },
   methods: {
-    changeMonthHandle(){
-      console.log(this.mark[0])
+    changeMonthHandle(data){
+      this.mark[0] = data
+      this.initData()
     },
     choseDay(time){
       this.mark = [this.$storage.formateTime(time)]
       this.initData()
     },
+    
     // 获取数据
     initData(){
       let time = this.mark[0]
