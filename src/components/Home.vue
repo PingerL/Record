@@ -92,12 +92,12 @@ export default {
     color: #666;
   }
   .addBtn {
-    position: absolute;
     width: 40px;
     height: 40px;
-    font-size: 30px;
+    font-size: 16px;
     line-height: 30px;
     text-align: center;
+    position: absolute;
     right: 10px;
     bottom: 50px;
     color: white;
