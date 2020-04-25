@@ -21,7 +21,7 @@
       </ul>
      
     </div>
-    <router-link :to="{path:'/handle',query:{time:mark[0]}}" class="addBtn" tag="div">加</router-link>
+    <router-link :to="{path:'/handle',query:{time:mark[0]}}" class="addBtn" tag="div"><img style="width:40px" src="../assets/add.png" /></router-link>
   </div>
 </template>
 
@@ -96,10 +96,8 @@ export default {
   .addBtn {
     width: 40px;
     height: 40px;
-    font-size: 18px;
-    line-height: 40px;
-    text-align: center;
     position: absolute;
+    text-align: center;
     right: 10px;
     bottom: 50px;
     color: white;

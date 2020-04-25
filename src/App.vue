@@ -6,7 +6,6 @@
 
 <style>
 #app {
-  /* background-color: pink; */
   max-width: 410px;
 }
 
