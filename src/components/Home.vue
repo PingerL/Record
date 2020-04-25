@@ -71,7 +71,7 @@ export default {
   position: relative;
 }
   .home-box .wh_content_item .wh_isToday {
-    background-color: rgb(240, 89, 44) ;
+    background: rgb(240, 89, 44) ;
   }
   .info {
     padding-left: 16px;

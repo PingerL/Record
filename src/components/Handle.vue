@@ -53,7 +53,6 @@ export default {
       }, 3000);
     },
     backHandle(){
-      // this.$router.push("home");
       this.$router.push({ name: 'home', params: { time: this.$route.query.time }})
     },
     addHandle() {
@@ -69,14 +68,13 @@ export default {
       );
       this.msg = "添加成功";
       this.handle();
-      this.$router.push("home");
+      this.backHandle()
     },
     getHandle(){
       if(!this.$route.query.id) return
       let data = this.$storage.getInfo(this.$route.query.time,this.$route.query.id)
       this.info.title = data.title
       this.info.detail = data.content
-      console.log(data)
     },
     delHandle(){
       this.$storage.delInfo(this.$route.query.time,this.id)
