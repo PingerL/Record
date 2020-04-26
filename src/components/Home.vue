@@ -1,8 +1,7 @@
 <template>
   <div id="home-box">
-    <calendar  ref="calendar" @changeMonth="changeMonthHandle" @choseDay="choseDay"
+    <calendar  ref="calendar" @changeMonth="changeMonth" @choseDay="choseDay"
     :markDate="mark"></calendar>
-
     <div class="infoBox">
       <div class="tip" v-if="list.length === 0">
         <p>暂无记录</p>
@@ -34,16 +33,18 @@ export default {
   data(){
     return {
       mark:[],
-      list:[
-        {time:"08:08",title:"第一天",content:"记录第一天"}
-      ]
+      list:[]
     }
   },
   methods: {
-    changeMonthHandle(data){
+    choseMonth(){
+      this.$refs.calendar.ChoseMonth(this.mark[0])
+    },
+    changeMonth(data){
       this.mark = [this.$storage.formateTime(data)]
       this.initData()
     },
+    // 点击选择某一天
     choseDay(time){
       this.mark = [this.$storage.formateTime(time)]
       this.initData()
@@ -55,16 +56,16 @@ export default {
       this.list = this.$storage.getInfo(time) || []
     }
   },
-  created(){
+  mounted(){
     this.mark = [this.$storage.formatData(new Date())]
     let time = this.$route.params.time
     if(time){
       this.mark = [decodeURIComponent(time)]
-      this.changeMonthHandle(time)
-    }else {
-      this.initData()
     }
+    this.initData()
+    this.choseMonth()
   }
+
 }
 </script>
 

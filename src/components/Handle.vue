@@ -54,7 +54,7 @@ export default {
       }, 3000);
     },
     backHandle(){
-      this.$router.push({ name: 'home', params: { time: this.$route.query.time }})
+      this.$router.push({ name: 'home', params: { time: this.time }})
     },
     addHandle() {
       if (!this.info.title.trim() || !this.info.detail.trim()) {
