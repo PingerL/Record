@@ -4,8 +4,6 @@ function setInfo(time,title ="",content=""){
   let DATA = JSON.parse(localStorage.getItem(FLAG) || "{}"),
   //Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组
       DATA_KEYS = Object.keys(DATA) 
-      console.log(DATA,'data')
-      console.log(DATA_KEYS,'key')
   if(!DATA_KEYS.includes(time)){
     DATA[time] = []
   }
@@ -61,12 +59,35 @@ function getMinutes(){
   minutes = minutes < 10? '0' + minutes : minutes
   hours = hours < 10? '0' + hours : hours
   return `${hours}:${minutes}`
-
+}
+function addZero(i) {
+  return i < 10 ? "0" + i: i + "";
+}
+function countDown(x){
+    var nowtime = new Date();
+    var endtime = x
+    var lefttime = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+    var d = parseInt(lefttime / (24*60*60))
+    var h = parseInt(lefttime / (60 * 60) % 24);
+    var m = parseInt(lefttime / 60 % 60);
+    var s = parseInt(lefttime % 60);
+    d = addZero(d)
+    h = addZero(h);
+    m = addZero(m);
+    s = addZero(s);
+    let result
+    if(lefttime <= 0){
+      result= false
+    } else {
+      result =  `活动倒计时  ${d}天 ${h} 时 ${m} 分 ${s} 秒`
+    }
+    return result
 }
 export default {
   formatData,
   formateTime,
   getInfo,
   setInfo,
-  delInfo
+  delInfo,
+  countDown
 }
