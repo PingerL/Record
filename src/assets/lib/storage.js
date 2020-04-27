@@ -2,8 +2,9 @@ let FLAG = "RECOED-DATA"
 
 function setInfo(time,title ="",content=""){
   let DATA = JSON.parse(localStorage.getItem(FLAG) || "{}"),
-  //Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组
+  //Object.keys(obj)方法会返回一个由一个给定对象的自身可枚举属性组成的数组,obj:要返回其枚举自身属性的对象 
       DATA_KEYS = Object.keys(DATA) 
+      console.log(DATA_KEYS)
   if(!DATA_KEYS.includes(time)){
     DATA[time] = []
   }

@@ -67,8 +67,6 @@ export default {
         this.info.title,
         this.info.detail
       );
-      this.msg = "添加成功";
-      this.handle();
       this.backHandle()
     },
     getHandle(){
@@ -83,7 +81,6 @@ export default {
     }
   },
   created() {
-    console.log(this.$route.query,'time');
     this.getHandle()
   }
 };

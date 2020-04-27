@@ -13,11 +13,9 @@
             <div class="info">
               <h3>{{item.title}}</h3>
               <p>{{item.content}}</p>
-              <p>{{}}</p>
             </div>
           </router-link>
         </li>
-      
       </ul>
      
     </div>
@@ -65,7 +63,6 @@ export default {
     }
     this.initData()
     this.choseMonth()
-    console.log()
   }
 
 }

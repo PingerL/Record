@@ -1,25 +1,4 @@
-# record
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# Record
+## Vue版本地记录日志
+#### 实现功能
+- 基本功能：日志的添加、查看、删除
+- 没有后台，使用的是 `localStorage`来存储数据
